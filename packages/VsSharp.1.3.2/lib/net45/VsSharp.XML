@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VsSharp</name>
+    </assembly>
+    <members>
+        <member name="T:CnSharp.VisualStudio.Extensions.Commands.CommandControl">
+            <summary>
+                Add-in control of command
+            </summary>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.Commands.CommandControl.#ctor">
+            <summary>
+                Constructor
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Id">
+            <summary>
+                Id,as while as the command Name
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Text">
+            <summary>
+                Text
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Tooltip">
+            <summary>
+                Tooltip text
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.FaceId">
+            <summary>
+                Office style icon face id
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Position">
+            <summary>
+                Relative position in the parent control,can be minus
+            </summary>
+            <remarks>
+                相对于父控件Child总数n而言，大于等于0则放在末尾n+1的位置，为负数则放在倒数第n-Position的位置
+            </remarks>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Picture">
+            <summary>
+                Picture id in ResourceManager
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Image">
+            <summary>
+                Image instance from ResourceManager
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.ClassName">
+            <summary>
+                Action class type name
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.CommandActionType">
+            <summary>
+                Action type
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.AttachTo">
+            <summary>
+                Parent control name that the control attach to
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.BeginGroup">
+            <summary>
+                begin group,insert a bar in context menu if set True
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Command">
+            <summary>
+                Command instance of <see cref="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.ClassName" />
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Plugin">
+            <summary>
+                <see cref="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Plugin" /> which the control attach to
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Arg">
+            <summary>
+                Argument for <see cref="T:CnSharp.VisualStudio.Extensions.Commands.ICommand" /> execution
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.DependOn">
+            <summary>
+                <see cref="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.DependentItems" /> name for making the control  enabled or disabled
+            </summary>
+        </member>
+        <member name="P:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Tag">
+            <summary>
+                Argument for <see cref="T:CnSharp.VisualStudio.Extensions.Commands.ICommand" /> execution,only be assgined by programming
+            </summary>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.Commands.CommandControl.Execute">
+            <summary>
+                execute action
+            </summary>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.Commands.CommandControl.LoadInstance(System.String)">
+            <summary>
+                load an instance
+            </summary>
+            <param name="typeName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CnSharp.VisualStudio.Extensions.ProjectExtensions">
+            <summary>
+                extensions of <see cref="T:EnvDTE.Project"/>
+            </summary>
+            <remarks>
+                http://www.codeproject.com/Articles/36219/Exploring-EnvDTE
+            </remarks>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.ProjectExtensions.GetRootNameSpace(EnvDTE.Project)">
+            <summary>
+            get root namespace of project
+            </summary>
+            <param name="project"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.ProjectExtensions.GetDirectory(EnvDTE.Project)">
+            <summary>
+            get project directory full path
+            </summary>
+            <param name="project"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.ProjectExtensions.GetReferenceProjects(EnvDTE.Project)">
+            <summary>
+            get reference projects of project
+            </summary>
+            <param name="project"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.ProjectExtensions.AddReference(EnvDTE.Project,System.String,System.String)">
+            <summary>
+            </summary>
+            <param name="project"></param>
+            <param name="referenceIdentity"></param>
+            <param name="browseUrl">
+                is either the File Path or the Strong Name
+                e.g (System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A)
+            </param>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.ProjectExtensions.RemoveReference(EnvDTE.Project,System.String)">
+            <summary>
+            </summary>
+            <param name="project"></param>
+            <param name="referenceIdentity"></param>
+            <param name="browseUrl">
+                is either the File Path or the Strong Name
+                e.g (System.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A)
+            </param>
+        </member>
+        <member name="T:CnSharp.VisualStudio.Extensions.Projects.PackageProjectProperties">
+            <summary>
+            Package properties of project,see <PropertyGroup></PropertyGroup> section in *proj file.
+            </summary>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.SourceControl.ISourceControl.CheckOut(System.String,System.String)">
+            <summary>
+            check out file
+            </summary>
+            <param name="slnDir"></param>
+            <param name="file"></param>
+            <returns>-1 no version control; 0 check out failed ; >0 check out success</returns>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.SourceControl.ISourceControl.GetPendingFiles(System.String)">
+            <summary>
+            get pending files
+            </summary>
+            <param name="projectDir"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CnSharp.VisualStudio.Extensions.WindowAccessor.WriteToOutputWindow(System.String,System.String)">
+            <summary>
+                output message to Output Window
+            </summary>
+            <param name="paneName"></param>
+            <param name="message"></param>
+        </member>
+    </members>
+</doc>
